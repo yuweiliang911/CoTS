@@ -2,7 +2,7 @@
 
 # 🎯 CoTS
 
-### Bridging the Confidence Gap: Temperature Scaling for Calibrating Test-Time Prompt Tuning
+### Temperature-Scaling Calibration for Single-Sample Test-Time Adaptation
 
 [Overview](#overview) · [Installation](#installation) · [Data](#data-preparation) · [Quick Start](#quick-start)
 
@@ -14,9 +14,10 @@
 
 ## Overview
 
-CoTS is a temperature-scaling-based method for test-time prompt tuning that
-achieves a strong balance between accuracy and calibration. The evaluation
-pipeline reports both top-1 accuracy and Expected Calibration Error (ECE).
+CoTS uses temperature scaling to calibrate predictions adapted from a single
+test sample, achieving a strong balance between accuracy and calibration. The
+evaluation pipeline reports both top-1 accuracy and Expected Calibration Error
+(ECE).
 
 | CLI name | Method | Implementation |
 |:---:|---|---|
