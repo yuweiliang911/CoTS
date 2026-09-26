@@ -59,14 +59,10 @@ CoTS/
 ## Installation
 
 This project requires Python, PyTorch with CUDA support, and a CUDA-capable
-GPU. Model weights are managed with [Git LFS](https://git-lfs.com/).
+GPU. Download and extract the repository, then install the dependencies:
 
 ```bash
-git lfs install
-git clone https://github.com/yuweiliang911/CoTS.git
 cd CoTS
-git lfs pull
-
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -80,12 +76,9 @@ your_cache_path/clip/
 └── ViT-B-16.pt
 ```
 
-They can be obtained in either of the following ways:
-
-- Run `git lfs pull` inside this repository.
-- Download the official OpenAI CLIP checkpoints directly:
-  [RN50](https://openaipublic.azureedge.net/clip/models/afeb0e10f9e5a86da6080e35cf09123aca3b358a0c3e3b6c78a7b63bc04b6762/RN50.pt) ·
-  [ViT-B/16](https://openaipublic.azureedge.net/clip/models/5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f/ViT-B-16.pt)
+Download the official OpenAI CLIP checkpoints directly:
+[RN50](https://openaipublic.azureedge.net/clip/models/afeb0e10f9e5a86da6080e35cf09123aca3b358a0c3e3b6c78a7b63bc04b6762/RN50.pt) ·
+[ViT-B/16](https://openaipublic.azureedge.net/clip/models/5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f/ViT-B-16.pt)
 
 Place downloaded files in `your_cache_path/clip/` using the filenames shown
 above. See the [official CLIP repository](https://github.com/openai/CLIP) for
