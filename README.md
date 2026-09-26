@@ -1,21 +1,19 @@
 <div align="center">
 
-# CoTS
+# 🎯 CoTS
 
 ### Calibration-aware instance-level test-time prompt tuning
 
 An evaluation toolkit for studying the accuracy and calibration of CLIP-based
 test-time prompt tuning methods.
 
-[Overview](#overview) · [Installation](#installation) · [Data](#data-preparation) · [Quick Start](#quick-start) · [Outputs](#outputs)
+[Overview](#overview) · [Installation](#installation) · [Data](#data-preparation) · [Quick Start](#quick-start)
 
 </div>
 
 <p align="center">
   <img src="assets/cots_scatter.png" width="100%" alt="Accuracy and calibration comparison on fine-grained datasets and ImageNet variants">
 </p>
-
-<p align="center"><a href="assets/cots_scatter.pdf">View the vector PDF</a></p>
 
 ## Overview
 
@@ -82,6 +80,17 @@ your_cache_path/clip/
 └── ViT-B-16.pt
 ```
 
+They can be obtained in either of the following ways:
+
+- Run `git lfs pull` inside this repository.
+- Download the official OpenAI CLIP checkpoints directly:
+  [RN50](https://openaipublic.azureedge.net/clip/models/afeb0e10f9e5a86da6080e35cf09123aca3b358a0c3e3b6c78a7b63bc04b6762/RN50.pt) ·
+  [ViT-B/16](https://openaipublic.azureedge.net/clip/models/5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f/ViT-B-16.pt)
+
+Place downloaded files in `your_cache_path/clip/` using the filenames shown
+above. See the [official CLIP repository](https://github.com/openai/CLIP) for
+additional model information.
+
 Optional CoOp prompt checkpoints can be loaded with
 `--load /path/to/checkpoint_root`. The directory passed to `--load` must
 contain the corresponding `rn50_ep50_16shots/...` or
@@ -90,6 +99,16 @@ contain the corresponding `rn50_ep50_16shots/...` or
 ## Data Preparation
 
 Pass the parent dataset directory with `--data`. The expected layout is:
+
+- [CoOp dataset guide](https://github.com/KaiyangZhou/CoOp/blob/main/DATASETS.md):
+  download instructions for the fine-grained datasets used by this project.
+- [ImageNet](https://image-net.org/download.php)
+- [ImageNet-A](https://github.com/hendrycks/natural-adv-examples)
+- [ImageNet-R](https://github.com/hendrycks/imagenet-r)
+- [ImageNet-Sketch](https://github.com/HaohanWang/ImageNet-Sketch)
+- [ImageNetV2](https://github.com/modestyachts/ImageNetV2)
+
+After downloading, arrange the datasets as follows:
 
 ```text
 /path/to/datasets/
@@ -171,23 +190,6 @@ bash run_baseline.sh <GPU_ID> <METHOD> <CALIBRATION_MODE>
 ```
 
 `CALIBRATION_MODE` supports `none`, `zs-norm`, `penalty`, and `sals`.
-
-## Outputs
-
-Logs are written to:
-
-```text
-<output_dir>/<backbone>/seed_<seed>/<algorithm>/log_<dataset>.txt
-```
-
-For example:
-
-```text
-outputs/ViT-B16/seed_0/tpt/log_DTD.txt
-```
-
-Every log contains the full configuration, running accuracy, and final
-`Acc@1` and `ECE@20` values for all five output heads.
 
 ## License
 
