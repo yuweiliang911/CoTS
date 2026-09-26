@@ -2,10 +2,7 @@
 
 # 🎯 CoTS
 
-### Calibration-aware instance-level test-time prompt tuning
-
-An evaluation toolkit for studying the accuracy and calibration of CLIP-based
-test-time prompt tuning methods.
+### Bridging the Confidence Gap: Temperature Scaling for Calibrating Test-Time Prompt Tuning
 
 [Overview](#overview) · [Installation](#installation) · [Data](#data-preparation) · [Quick Start](#quick-start)
 
@@ -17,19 +14,9 @@ test-time prompt tuning methods.
 
 ## Overview
 
-This repository accompanies *Bridging the Confidence Gap: Temperature Scaling
-for Calibrating Test-Time Prompt Tuning*.
-
-Test-time prompt tuning (TPT) improves accuracy by adapting prompts to each test
-instance, but can make predictions poorly calibrated. CoTS is a simple post-hoc
-method that temperature-scales the adapted prediction to reduce its confidence
-gap from the well-calibrated zero-shot prediction. It avoids introducing an
-additional regularization objective that may trade accuracy for calibration.
-E-CoTS further combines CoTS with a weak-strong ensemble over multiple test-time
-augmentations, improving accuracy while retaining reliable confidence.
-
-The evaluation pipeline supports five prompt-tuning methods and reports both
-top-1 accuracy and Expected Calibration Error (ECE).
+CoTS is a temperature-scaling-based method for test-time prompt tuning that
+achieves a strong balance between accuracy and calibration. The evaluation
+pipeline reports both top-1 accuracy and Expected Calibration Error (ECE).
 
 | CLI name | Method | Implementation |
 |:---:|---|---|
@@ -199,10 +186,9 @@ The three positional arguments are:
 bash run_baseline.sh <GPU_ID> <METHOD> <CALIBRATION_MODE>
 ```
 
-`CALIBRATION_MODE` supports `none`,
-[`zs-norm`](https://arxiv.org/pdf/2407.13588),
-[`penalty`](https://arxiv.org/pdf/2407.13588), and
-[`sals`](https://arxiv.org/pdf/2407.13588).
+`CALIBRATION_MODE` supports `none`, `zs-norm`, `penalty`, and `sals`. For
+details on these calibration methods, see
+[*Robust Calibration of Large Vision-Language Adapters*](https://arxiv.org/pdf/2407.13588).
 
 ## License
 
