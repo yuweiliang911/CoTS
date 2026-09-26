@@ -36,6 +36,9 @@ Each run evaluates five prediction heads:
 | `alpha=sim` | Similarity-adaptive E-CoTS ensemble |
 | `sals` | SaLS prediction |
 
+For TPT, the reported CoTS and E-CoTS results correspond to the `alpha=1.0`
+and `alpha=sim` prediction heads, respectively.
+
 ## Repository Structure
 
 ```text
