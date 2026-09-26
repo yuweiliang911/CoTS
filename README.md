@@ -190,6 +190,8 @@ bash run_baseline.sh <GPU_ID> <METHOD> <CALIBRATION_MODE>
 ```
 
 `CALIBRATION_MODE` supports `none`, `zs-norm`, `penalty`, and `sals`.
+For details, see
+[*Bridging the Confidence Gap: Temperature Scaling for Calibrating Test-Time Prompt Tuning*](https://arxiv.org/pdf/2407.13588).
 
 ## License
 
