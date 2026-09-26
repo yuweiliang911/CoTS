@@ -2,7 +2,7 @@
 
 # 🎯 CoTS
 
-### Temperature-Scaling Calibration for Single-Sample Test-Time Adaptation
+### A Calibration Method for Episodic Test-Time Adaptation
 
 [Overview](#overview) · [Installation](#installation) · [Data](#data-preparation) · [Quick Start](#quick-start)
 
